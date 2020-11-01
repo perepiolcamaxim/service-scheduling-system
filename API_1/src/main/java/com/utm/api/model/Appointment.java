@@ -3,12 +3,14 @@ package com.utm.api.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.lang.NonNull;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 @Entity
-public class Appointment
+public class Appointment implements Serializable
 {
     @Id
     private Long id;
