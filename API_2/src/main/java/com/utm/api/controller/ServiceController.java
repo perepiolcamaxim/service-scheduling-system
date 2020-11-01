@@ -19,25 +19,25 @@ public class ServiceController
         return serviceService.getServices();
     }
 
-    @PostMapping("/service")
+    @PostMapping("/services")
     @ResponseStatus(HttpStatus.CREATED)
     Service saveService(@RequestBody Service service)
     {
         return serviceService.saveService(service);
     }
 
-    @PutMapping("/service/{id}")
+    @PutMapping("/services/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     Service updateService(@RequestBody Service service, @PathVariable Long id)
     {
         return serviceService.updateService(service, id);
     }
 
-    @GetMapping("/service/{location}")
+    @GetMapping("/services/{location}")
     List<Service> getServicesByLocation(@PathVariable String location)
     {return  serviceService.getServicesByLocation(location);}
 
-    @DeleteMapping("/service/{id}")
+    @DeleteMapping("/services/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteService(@PathVariable Long id)
     {

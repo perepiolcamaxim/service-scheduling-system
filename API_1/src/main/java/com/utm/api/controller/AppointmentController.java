@@ -34,21 +34,21 @@ public class AppointmentController
         return CollectionModel.of(employees, linkTo(methodOn(AppointmentController.class).getAllAppointments()).withSelfRel());
     }
 
-    @GetMapping("/appointment/{id}")
+    @GetMapping("/appointments/{id}")
     public EntityModel<Appointment> getAppointment(@PathVariable Long id)
     {
         Appointment appointment = appointmentService.getAppointment(id);
         return assembler.toModel(appointment);
     }
 
-    @PostMapping("/appointment")
+    @PostMapping("/appointments")
     @ResponseStatus(HttpStatus.CREATED)
     Appointment registerAppointment(@RequestBody Appointment appointment)
     {
         return appointmentService.registerAppointment(appointment);
     }
 
-    @PutMapping("/appointment/{id}")
+    @PutMapping("/appointments/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     EntityModel<Appointment> updateAppointment(@RequestBody Appointment appointment, @PathVariable Long id)
     {

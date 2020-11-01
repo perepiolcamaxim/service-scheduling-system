@@ -2,7 +2,6 @@ package com.utm.api;
 
 import com.utm.api.model.Appointment;
 import com.utm.api.model.Service;
-import com.utm.api.model.User;
 import com.utm.api.repository.AppointmentRepository;
 import com.utm.api.repository.ServiceRepository;
 import org.slf4j.Logger;
