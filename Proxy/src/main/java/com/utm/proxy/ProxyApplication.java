@@ -16,7 +16,12 @@ public class ProxyApplication {
 	}
 
 	@Bean
-	public SimpleFilter simpleFilter() {
-		return new SimpleFilter();
+	public PreFilter simpleFilter() {
+		return new PreFilter();
+	}
+
+	@Bean
+	public PostFilter simpleFilter2() {
+		return new PostFilter();
 	}
 }
