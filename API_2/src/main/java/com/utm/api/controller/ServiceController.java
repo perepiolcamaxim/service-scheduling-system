@@ -28,7 +28,7 @@ public class ServiceController {
 
     @GetMapping("/services/{location}")
     @Cacheable()
-    List<Service> getServicesByLocation(@PathVariable String location) {
+    public List<Service> getServicesByLocation(@PathVariable String location) {
         logger.info("Service Controller : /services/location  call");
         return serviceService.getServicesByLocation(location);
     }

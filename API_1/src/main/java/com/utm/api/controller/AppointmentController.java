@@ -57,7 +57,7 @@ public class AppointmentController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/appointment/{id}")
+    @DeleteMapping("/appointments/{id}")
     void deleteAppointment(@PathVariable Long id) {
         appointmentService.deleteAppointment(id);
     }

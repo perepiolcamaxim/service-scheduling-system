@@ -16,12 +16,22 @@ public class ProxyApplication {
 	}
 
 	@Bean
-	public PreFilter simpleFilter() {
-		return new PreFilter();
+	public PreFilterService simpleFilterService() {
+		return new PreFilterService();
 	}
 
 	@Bean
-	public PostFilter simpleFilter2() {
-		return new PostFilter();
+	public PostFilterService simpleFilter2Service() {
+		return new PostFilterService();
+	}
+
+	@Bean
+	public PreFilterAppointment simpleFilterAppointment() {
+		return new PreFilterAppointment();
+	}
+
+	@Bean
+	public PostFilterAppointment simpleFilter2Appointment() {
+		return new PostFilterAppointment();
 	}
 }

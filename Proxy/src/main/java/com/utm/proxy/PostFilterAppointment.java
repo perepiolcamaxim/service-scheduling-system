@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-public class PostFilter extends ZuulFilter
+public class PostFilterAppointment extends ZuulFilter
 {
     @Override
     public String filterType() {
@@ -28,7 +28,7 @@ public class PostFilter extends ZuulFilter
     {
         return RequestContext.getCurrentContext().getRequest()
                 .getRequestURI()
-                .matches("/services");
+                .matches("/appointments");
     }
 
     @Override
@@ -43,14 +43,14 @@ public class PostFilter extends ZuulFilter
             StatefulRedisConnection<String, String> connection = redisClient.connect();
             RedisCommands<String, String> syncCommands = connection.sync();
 
-            if (syncCommands.exists("services") == 0)
+            if (syncCommands.exists("appointments") == 0)
             {
                 try
                 {
                     final InputStream responseDataStream = context.getResponseDataStream();
                     String responseData = CharStreams.toString(new InputStreamReader(responseDataStream, StandardCharsets.UTF_8));
-                    syncCommands.set("services", responseData);
-                    syncCommands.expire("services", 60);
+                    syncCommands.set("appointments", responseData);
+                    syncCommands.expire("appointments", 60);
 
                     context.setResponseBody(responseData);
                     context.getResponse().setContentType("application/json;charset=UTF-8");

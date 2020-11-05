@@ -7,7 +7,7 @@ import io.lettuce.core.RedisClient;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
 
-public class PreFilter extends ZuulFilter
+public class PreFilterService extends ZuulFilter
 {
     @Override
     public String filterType() {
