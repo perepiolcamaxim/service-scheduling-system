@@ -1,9 +1,10 @@
 package com.utm.api.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Service
+public class Service implements Serializable
 {
     @Id
     private Long id;
