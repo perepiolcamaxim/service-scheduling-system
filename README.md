@@ -4,6 +4,7 @@
 ### Technology stack & other Open-source libraries
 #### Data
 - MySQL - Open-Source Relational Database Management System
+- Spring Data JPA - makes it easy to easily implement JPA based repositories
 #### RESTful Web Service
 - JDK - Java™ Platform, Standard Edition Development Kit
 - Spring Boot - Framework to ease the bootstrapping and development of new Spring Applications
